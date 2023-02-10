@@ -1,0 +1,28 @@
+body {
+  background-color: rgb(41, 40, 38);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-container h1 {
+  font-size: 75px;
+  color: aqua;
+}
+
+.creation-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 150px;
+  width: 400px;
+  border-radius: 100px;
+  background-color: rgb(91, 205, 81);
+}
+.creation-button p{
+  color: rgb(255, 255, 255);
+  font-size: 35px;
+}
