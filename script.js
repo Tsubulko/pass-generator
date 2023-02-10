@@ -1,3 +1,4 @@
+document.querySelector(".creation-button").onclick = showPass;
 function randomInteger(max) {
   return Math.floor(Math.random() * max);
 }
@@ -76,4 +77,20 @@ function createPass(passLength) {
   return password;
 }
 
-createPass(8);
+function copyText(){
+  let copyText = document.getElementById("myInput");
+  copyText.select();
+  document.execCommand("copy");
+
+  let tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied: " + copyText.value;
+}
+function outFunc() {
+  let tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+
+function showPass() {
+  let lng = prompt('Enter password length', 8);
+  document.querySelector("input").value = ` ${createPass(Number(lng))}`;
+}

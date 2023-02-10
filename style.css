@@ -1,4 +1,5 @@
 body {
+  box-sizing: border-box;
   background-color: rgb(41, 40, 38);
 }
 
@@ -6,7 +7,6 @@ body {
   display: flex;
   justify-content: center;
 }
-
 .logo-container h1 {
   font-size: 75px;
   color: aqua;
@@ -21,8 +21,71 @@ body {
   width: 400px;
   border-radius: 100px;
   background-color: rgb(91, 205, 81);
+  border: #555 2px solid;
 }
 .creation-button p{
   color: rgb(255, 255, 255);
   font-size: 35px;
+}
+
+.pass-container {
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+  align-items: center;
+}
+
+#myInput {
+  width: 600px;
+  height: 60px;
+  margin-bottom: 40px;
+  border-radius: 25px;
+  font-size: 30px;
+  border: 0px;
+  text-align: center;
+}
+.copy-btn {
+  width: 100px;
+  height: 30px;
+  border-radius: 25px;
+  background: rgb(91, 205, 81);
+  border: #555 2px solid;
+}
+.copy-btn-text {
+  color: #fff;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

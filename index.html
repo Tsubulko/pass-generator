@@ -12,7 +12,15 @@
     <h1>CREATE YOUR PASSWORD</h1>
   </div>
   <div class="creation-button"><p>CREATE!</p></div>
-  <div class="pass-container"></div>
+  <div class="pass-container">
+    <input type="text" value="" id="myInput">
+    <div class="tooltip">
+      <button class="copy-btn" onclick="copyText()" onmouseout="outFunc()">
+        <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+        <span class="copy-btn-text">Copy text</span>
+        </button>
+      </div>
+  </div>
   <script src="./script.js"></script>
 </body>
 </html>
