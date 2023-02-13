@@ -132,7 +132,3 @@ function makeGreen() {
     tooltip.classList.remove("tooltiptextGreen");
   }, 1500);
 }
-
-function restrictPrompt() {
-  
-}
