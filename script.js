@@ -8,13 +8,12 @@ function drow(){
   <div class="tooltip">
     <button class="copy-btn" onclick="copyText()" onmouseout="outFunc()">
       <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-      <span class="copy-btn-text">Copy text</span>
+      <span class="copy-btn-text">Copy password!</span>
       </button>
     </div>
 </div>`
 }
 drow();
-
 document.querySelector(".creation-button").onclick = showPass;
 function randomInteger(max) {
   return Math.floor(Math.random() * max);
@@ -90,17 +89,27 @@ function createPass(passLength) {
     result.push(CHAR[randomInteger(CHAR.length)]);
   }
   let password = result.join("");
-  console.log(password)
   return password;
 }
 
 function copyText(){
-  let copyText = document.getElementById("myInput");
-  copyText.select();
-  document.execCommand("copy");
+  makeGreen();
+  const inputVal = document.querySelector("#myInput").value;
+  const myTooltip = document.querySelector("#myTooltip");
 
-  let tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copied: " + copyText.value;
+  if(inputVal) {
+    navigator.clipboard.writeText(inputVal)
+    .then(() => {
+      if (myTooltip.innerText !== `Copied: ${inputVal}`) {
+        const originalText = myTooltip.innerText;
+        myTooltip.innerText = `Copied: ${inputVal}`;
+        setTimeout(() => {
+          myTooltip.innerText = originalText;
+        }, 1500);
+      }
+    })
+    .catch((err) => console.log("Error",err))
+  }
 }
 
 function outFunc() {
@@ -110,21 +119,20 @@ function outFunc() {
 
 function showPass() {
   let lng = prompt('Enter password length', 8);
-  document.querySelector("input").value = ` ${createPass(Number(lng))}`;
+  if (lng !== NaN && lng <= 100 && lng > 0) {
+    document.querySelector("input").value = `${createPass(Number(lng))}`;
+  }
+  else showPass();
 }
-// function qwe(){
-//   onMouseOver=this.select();
-//   onMouseOut=this.value +=' '; 
-//   this.value = this.value.slice(0, -1);
-// }
 
-// document.querySelector("input") = qwe();
-// function clearSelection() {
-//       if(document.selection && document.selection.empty) {
-//           document.selection.empty();
-//       } else if(window.getSelection) {
-//           var sel = window.getSelection();
-//           sel.removeAllRanges();
-//       }
-//   }
+function makeGreen() {
+  let tooltip = document.querySelector(".copy-btn-text");
+  tooltip.classList.add("tooltiptextGreen");
+  setTimeout(() => {
+    tooltip.classList.remove("tooltiptextGreen");
+  }, 1500);
+}
+
+function restrictPrompt() {
   
+}

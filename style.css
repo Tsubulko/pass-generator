@@ -9,23 +9,28 @@ body {
 }
 .logo-container h1 {
   font-size: 75px;
-  color: aqua;
+  color: rgb(131 131 131);
 }
 
 .creation-button {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  height: 150px;
-  width: 400px;
+  height: 100px;
+  width: 300px;
   border-radius: 100px;
-  background-color: rgb(91, 205, 81);
-  border: #555 2px solid;
-}
-.creation-button p{
-  color: rgb(255, 255, 255);
+  background-color: rgb(28 28 28);
+  border: #55555500 2px solid;
+  transition: 0.5s;
+  color: rgb(131 131 131);
   font-size: 35px;
+}
+.creation-button:hover {
+  background: rgb(131 131 131);
+  border: rgb(28 28 28) 2px solid;
+  color: rgb(28 28 28);
 }
 
 .pass-container {
@@ -36,6 +41,8 @@ body {
 }
 
 #myInput {
+  color: #959595;
+  background: rgb(58 58 58);
   width: 600px;
   height: 60px;
   margin-bottom: 50px;
@@ -45,14 +52,22 @@ body {
   text-align: center;
 }
 .copy-btn {
-  width: 100px;
+  cursor: pointer;
+  width: 116px;
   height: 30px;
   border-radius: 25px;
-  background: rgb(91, 205, 81);
+  background: rgb(28 28 28);
+  border: #55555500 2px solid;
+  color: rgb(131 131 131);
+  transition: 0.5s;
+}
+.copy-btn:hover {
+  background: rgb(131 131 131);
   border: #555 2px solid;
+  color: rgb(28 28 28);
 }
 .copy-btn-text {
-  color: #fff;
+  transition: 0.5s;
 }
 
 .tooltip {
@@ -62,8 +77,8 @@ body {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 140px;
-  background-color: #555;
-  color: #fff;
+  background-color: rgb(28 28 28);
+  color: rgb(131 131 131);
   text-align: center;
   border-radius: 6px;
   padding: 5px;
@@ -74,6 +89,9 @@ body {
   margin-left: -75px;
   opacity: 0;
   transition: opacity 0.3s;
+}
+.tooltiptextGreen {
+  color: rgb(35, 255, 35);
 }
 .tooltip .tooltiptext::after {
   content: "";
